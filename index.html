@@ -7,14 +7,13 @@
   <style>
     .map-container {
       position: relative;
-      width: 100%;
-      max-width: 100%;
-      height: auto;
+      width: 1269px;
+      height: 810px;
     }
 
     .map-container img {
-      width: 100%;
-      height: auto;
+      width: 1269px;
+      height: 810px;
       display: block;
     }
 
@@ -31,6 +30,10 @@
 
     .verde { background: #00cc44; }
     .celestino { background: #66ccff; }
+
+    /* AGGIUNTI I COLORI MANCANTI */
+    .arancio { background: #ff9900; }
+    .viola   { background: #9933ff; }
 
     .selected {
       width: 28px !important;
@@ -67,58 +70,56 @@
     // SCALA DI RIFERIMENTO: 1269 x 810 px
 
     const markers = [
-      [
-  [
-  { id: "palo_43", x: 479/1269,  y: 205/810, color: "arancio", pdf: "pdf/P_43.pdf" },
-  { id: "palo_44", x: 555/1269,  y: 205/810, color: "arancio", pdf: "pdf/P_44.pdf" },
-  { id: "palo_45", x: 631/1269,  y: 205/810, color: "arancio", pdf: "pdf/P_45.pdf" },
-  { id: "palo_46", x: 707/1269,  y: 205/810, color: "arancio", pdf: "pdf/P_46.pdf" },
-  { id: "palo_47", x: 783/1269,  y: 205/810, color: "arancio", pdf: "pdf/P_47.pdf" },
-  { id: "palo_48", x: 860/1269,  y: 205/810, color: "arancio", pdf: "pdf/P_48.pdf" },
+      { id: "palo_43", x: 479/1269,  y: 205/810, color: "arancio", pdf: "pdf/P_43.pdf" },
+      { id: "palo_44", x: 555/1269,  y: 205/810, color: "arancio", pdf: "pdf/P_44.pdf" },
+      { id: "palo_45", x: 631/1269,  y: 205/810, color: "arancio", pdf: "pdf/P_45.pdf" },
+      { id: "palo_46", x: 707/1269,  y: 205/810, color: "arancio", pdf: "pdf/P_46.pdf" },
+      { id: "palo_47", x: 783/1269,  y: 205/810, color: "arancio", pdf: "pdf/P_47.pdf" },
+      { id: "palo_48", x: 860/1269,  y: 205/810, color: "arancio", pdf: "pdf/P_48.pdf" },
 
-  { id: "palo_49", x: 479/1269,  y: 353/810, color: "arancio", pdf: "pdf/P_49.pdf" },
-  { id: "palo_50", x: 555/1269,  y: 353/810, color: "arancio", pdf: "pdf/P_50.pdf" },
-  { id: "palo_51", x: 631/1269,  y: 353/810, color: "arancio", pdf: "pdf/P_51.pdf" },
-  { id: "palo_52", x: 707/1269,  y: 353/810, color: "arancio", pdf: "pdf/P_52.pdf" },
-  { id: "palo_53", x: 783/1269,  y: 353/810, color: "arancio", pdf: "pdf/P_53.pdf" },
-  { id: "palo_54", x: 860/1269,  y: 353/810, color: "arancio", pdf: "pdf/P_54.pdf" },
+      { id: "palo_49", x: 479/1269,  y: 353/810, color: "arancio", pdf: "pdf/P_49.pdf" },
+      { id: "palo_50", x: 555/1269,  y: 353/810, color: "arancio", pdf: "pdf/P_50.pdf" },
+      { id: "palo_51", x: 631/1269,  y: 353/810, color: "arancio", pdf: "pdf/P_51.pdf" },
+      { id: "palo_52", x: 707/1269,  y: 353/810, color: "arancio", pdf: "pdf/P_52.pdf" },
+      { id: "palo_53", x: 783/1269,  y: 353/810, color: "arancio", pdf: "pdf/P_53.pdf" },
+      { id: "palo_54", x: 860/1269,  y: 353/810, color: "arancio", pdf: "pdf/P_54.pdf" },
 
-  { id: "palo_55", x: 422/1269,  y: 408/810, color: "viola", pdf: "pdf/P_55.pdf" },
-  { id: "palo_56", x: 524/1269,  y: 408/810, color: "viola", pdf: "pdf/P_56.pdf" },
-  { id: "palo_57", x: 625/1269,  y: 408/810, color: "viola", pdf: "pdf/P_57.pdf" },
-  { id: "palo_58", x: 727/1269,  y: 408/810, color: "viola", pdf: "pdf/P_58.pdf" },
-  { id: "palo_59", x: 828/1269,  y: 408/810, color: "viola", pdf: "pdf/P_59.pdf" },
-  { id: "palo_60", x: 930/1269,  y: 408/810, color: "viola", pdf: "pdf/P_60.pdf" },
+      { id: "palo_55", x: 422/1269,  y: 408/810, color: "viola", pdf: "pdf/P_55.pdf" },
+      { id: "palo_56", x: 524/1269,  y: 408/810, color: "viola", pdf: "pdf/P_56.pdf" },
+      { id: "palo_57", x: 625/1269,  y: 408/810, color: "viola", pdf: "pdf/P_57.pdf" },
+      { id: "palo_58", x: 727/1269,  y: 408/810, color: "viola", pdf: "pdf/P_58.pdf" },
+      { id: "palo_59", x: 828/1269,  y: 408/810, color: "viola", pdf: "pdf/P_59.pdf" },
+      { id: "palo_60", x: 930/1269,  y: 408/810, color: "viola", pdf: "pdf/P_60.pdf" },
 
-  { id: "palo_61", x: 422/1269,  y: 492/810, color: "viola", pdf: "pdf/P_61.pdf" },
-  { id: "palo_62", x: 524/1269,  y: 492/810, color: "viola", pdf: "pdf/P_62.pdf" },
-  { id: "palo_63", x: 625/1269,  y: 492/810, color: "viola", pdf: "pdf/P_63.pdf" },
-  { id: "palo_64", x: 727/1269,  y: 492/810, color: "viola", pdf: "pdf/P_64.pdf" },
-  { id: "palo_65", x: 828/1269,  y: 492/810, color: "viola", pdf: "pdf/P_65.pdf" },
-  { id: "palo_66", x: 930/1269,  y: 492/810, color: "viola", pdf: "pdf/P_66.pdf" },
+      { id: "palo_61", x: 422/1269,  y: 492/810, color: "viola", pdf: "pdf/P_61.pdf" },
+      { id: "palo_62", x: 524/1269,  y: 492/810, color: "viola", pdf: "pdf/P_62.pdf" },
+      { id: "palo_63", x: 625/1269,  y: 492/810, color: "viola", pdf: "pdf/P_63.pdf" },
+      { id: "palo_64", x: 727/1269,  y: 492/810, color: "viola", pdf: "pdf/P_64.pdf" },
+      { id: "palo_65", x: 828/1269,  y: 492/810, color: "viola", pdf: "pdf/P_65.pdf" },
+      { id: "palo_66", x: 930/1269,  y: 492/810, color: "viola", pdf: "pdf/P_66.pdf" },
 
-  { id: "palo_67", x: 422/1269,  y: 576/810, color: "viola", pdf: "pdf/P_67.pdf" },
-  { id: "palo_68", x: 524/1269,  y: 576/810, color: "viola", pdf: "pdf/P_68.pdf" },
-  { id: "palo_69", x: 625/1269,  y: 576/810, color: "viola", pdf: "pdf/P_69.pdf" },
-  { id: "palo_70", x: 727/1269,  y: 576/810, color: "viola", pdf: "pdf/P_70.pdf" },
-  { id: "palo_71", x: 828/1269,  y: 576/810, color: "viola", pdf: "pdf/P_71.pdf" },
-  { id: "palo_72", x: 930/1269,  y: 576/810, color: "viola", pdf: "pdf/P_72.pdf" },
+      { id: "palo_67", x: 422/1269,  y: 576/810, color: "viola", pdf: "pdf/P_67.pdf" },
+      { id: "palo_68", x: 524/1269,  y: 576/810, color: "viola", pdf: "pdf/P_68.pdf" },
+      { id: "palo_69", x: 625/1269,  y: 576/810, color: "viola", pdf: "pdf/P_69.pdf" },
+      { id: "palo_70", x: 727/1269,  y: 576/810, color: "viola", pdf: "pdf/P_70.pdf" },
+      { id: "palo_71", x: 828/1269,  y: 576/810, color: "viola", pdf: "pdf/P_71.pdf" },
+      { id: "palo_72", x: 930/1269,  y: 576/810, color: "viola", pdf: "pdf/P_72.pdf" },
 
-  { id: "palo_73", x: 422/1269,  y: 660/810, color: "viola", pdf: "pdf/P_73.pdf" },
-  { id: "palo_74", x: 524/1269,  y: 660/810, color: "viola", pdf: "pdf/P_74.pdf" },
-  { id: "palo_75", x: 625/1269,  y: 660/810, color: "viola", pdf: "pdf/P_75.pdf" },
-  { id: "palo_76", x: 727/1269,  y: 660/810, color: "viola", pdf: "pdf/P_76.pdf" },
-  { id: "palo_77", x: 828/1269,  y: 660/810, color: "viola", pdf: "pdf/P_77.pdf" },
-  { id: "palo_78", x: 930/1269,  y: 660/810, color: "viola", pdf: "pdf/P_78.pdf" },
+      { id: "palo_73", x: 422/1269,  y: 660/810, color: "viola", pdf: "pdf/P_73.pdf" },
+      { id: "palo_74", x: 524/1269,  y: 660/810, color: "viola", pdf: "pdf/P_74.pdf" },
+      { id: "palo_75", x: 625/1269,  y: 660/810, color: "viola", pdf: "pdf/P_75.pdf" },
+      { id: "palo_76", x: 727/1269,  y: 660/810, color: "viola", pdf: "pdf/P_76.pdf" },
+      { id: "palo_77", x: 828/1269,  y: 660/810, color: "viola", pdf: "pdf/P_77.pdf" },
+      { id: "palo_78", x: 930/1269,  y: 660/810, color: "viola", pdf: "pdf/P_78.pdf" },
 
-  { id: "palo_79", x: 422/1269,  y: 744/810, color: "viola", pdf: "pdf/P_79.pdf" },
-  { id: "palo_80", x: 524/1269,  y: 744/810, color: "viola", pdf: "pdf/P_80.pdf" },
-  { id: "palo_81", x: 625/1269,  y: 744/810, color: "viola", pdf: "pdf/P_81.pdf" },
-  { id: "palo_82", x: 727/1269,  y: 744/810, color: "viola", pdf: "pdf/P_82.pdf" },
-  { id: "palo_83", x: 828/1269,  y: 744/810, color: "viola", pdf: "pdf/P_83.pdf" },
-  { id: "palo_84", x: 930/1269,  y: 744/810, color: "viola", pdf: "pdf/P_84.pdf" }
-]
+      { id: "palo_79", x: 422/1269,  y: 744/810, color: "viola", pdf: "pdf/P_79.pdf" },
+      { id: "palo_80", x: 524/1269,  y: 744/810, color: "viola", pdf: "pdf/P_80.pdf" },
+      { id: "palo_81", x: 625/1269,  y: 744/810, color: "viola", pdf: "pdf/P_81.pdf" },
+      { id: "palo_82", x: 727/1269,  y: 744/810, color: "viola", pdf: "pdf/P_82.pdf" },
+      { id: "palo_83", x: 828/1269,  y: 744/810, color: "viola", pdf: "pdf/P_83.pdf" },
+      { id: "palo_84", x: 930/1269,  y: 744/810, color: "viola", pdf: "pdf/P_84.pdf" }
     ];
+
     const map = document.getElementById("map");
     const tooltip = document.getElementById("tooltip");
 
